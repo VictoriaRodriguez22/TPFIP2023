@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Horario de clases</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 10px;
+			text-align: center;
+		}
+	</style>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+		$(function() {
+			// Permitir la edición y el arrastre de las materias
+			$("td").on("click", function() {
+				var materiaActual = $(this).text();
+				$(this).html("<input type='text' class='editarMateria' value='" + materiaActual + "' />");
+				$(".editarMateria").on("blur", function() {
+					var nuevaMateria = $(this).val();
+					$(this).parent().text(nuevaMateria);
+				});
+			}).draggable();
+			
+			// Permitir el arrastre de las materias a otras celdas
+			$("td").droppable({
+				drop: function(event, ui) {
+					var materiaArrastrada = ui.draggable.text();
+					var materiaDestino = $(this).text();
+					ui.draggable.text(materiaDestino);
+					$(this).text(materiaArrastrada);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+    <h1><a href="usuario-alumno.html">Atras</a></h1>
+	<h1>Horario de clases</h1>
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Lunes</th>
+				<th>Martes</th>
+				<th>Miércoles</th>
+				<th>Jueves</th>
+				<th>Viernes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>8:00 - 9:00</td>
+				<td class="editable">Matemáticas</td>
+				<td class="editable">Inglés</td>
+				<td class="editable">Historia</td>
+				<td class="editable"></td>
+				<td class="editable">Biología</td>
+			</tr>
+			<tr>
+				<td>9:00 - 10:00</td>
+				<td class="editable">Física</td>
+				<td class="editable">Programación</td>
+				<td class="editable"></td>
+				<td class="editable">Química</td>
+				<td class="editable">Arte</td>
+			</tr>
+			<tr>
+				<td>11:00 - 12:00</td>
+				<td class="editable"></td>
+				<td class="editable"></td>
+				<td class="editable">Geografía</td>
+				<td class="editable">Educación física</td>
+				<td class="editable"></td>
+			</tr>
+            <tr>
+				<td>12:00 - 13:00</td>
+				<td class="editable"></td>
+				<td class="editable"></td>
+				<td class="editable">Geografía</td>
+				<td class="editable">Educación física</td>
+				<td class="editable"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.imgnormalizada {
+    width: auto;
+    height: 225;
+    max-height: 500px;
+  }
+
+body{
+  background-color: rgba(127, 127, 128, 0.547);
+}

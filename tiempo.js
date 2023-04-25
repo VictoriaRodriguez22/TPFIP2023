@@ -1,4 +1,3 @@
-
 // Obtener referencias a los botones y elementos para cada tarjeta
 const buttons = document.querySelectorAll("#myButton");
 const elapsedTimes = document.querySelectorAll("#elapsedTime");
@@ -11,18 +10,18 @@ function updateElapsedTime(elapsedTime, startTime) {
   // Calcular los minutos transcurridos desde que se presionó el botón
   const elapsedMinutes = Math.floor((now - startTime) / (1000 * 60));
 
-    // Calcular las horas y minutos transcurridos
-    const elapsedHours = Math.floor(elapsedMinutes / 60);
-    const remainderMinutes = elapsedMinutes % 60;
-  
-    // Crear una cadena con el tiempo transcurrido en formato de horas y minutos
-    let elapsedString = `${elapsedHours} hora${elapsedHours !== 1 ? 's' : ''}`;
-    if (remainderMinutes > 0) {
-      elapsedString += ` ${remainderMinutes} minuto${remainderMinutes !== 1 ? 's' : ''}`;
-    }
+  // Calcular las horas y minutos transcurridos
+  const elapsedHours = Math.floor(elapsedMinutes / 60);
+  const remainderMinutes = elapsedMinutes % 60;
+
+  // Crear una cadena con el tiempo transcurrido en formato de horas y minutos
+  let elapsedString = `${elapsedHours} hora${elapsedHours !== 1 ? 's' : ''}`;
+  if (remainderMinutes > 0) {
+    elapsedString += ` ${remainderMinutes} minuto${remainderMinutes !== 1 ? 's' : ''}`;
+  }
 
   // Actualizar el elemento de la página con los minutos transcurridos
-  elapsedTime.textContent = elapsedMinutes;
+  elapsedTime.textContent = elapsedString;
 }
 
 // Recorrer cada botón y agregar un listener para detectar cuándo se presiona

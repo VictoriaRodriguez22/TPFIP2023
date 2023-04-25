@@ -1,14 +1,24 @@
-[
-  {
-      "username": "alejandro",
-      "password": "1234"
-  },
-  {
-      "username": "victoria",
-      "password": "1234"
-  },
-  {
-      "username": "silvio",
-      "password": "1234"
-  }
-]
+[{
+    "username": "ale",
+    "dni": "32323232",
+    "fechaNacimiento": "2023-04-04",
+    "direccion": "sarmiento",
+    "telefono": "02121212121",
+    "email": "a@a.com",
+    "password": "1234",
+    "tipoUsuario": "Padre"
+},
+
+{
+    "username" : "alejandro",
+    "password" : "1234"
+},
+
+{
+    "username" : "silvio",
+    "password" : "1234" 
+},
+{
+    "username" : "victoria",
+    "password" : "1234"
+}]

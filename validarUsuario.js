@@ -2,17 +2,17 @@ document.getElementById("btn-iniciar").addEventListener("click", function(event)
     event.preventDefault(); 
   
 
-    var username = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+    let username = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
   
     // Leer el archivo JSON con los usuarios y contraseñas
     fetch("usuarios.json")
       .then(response => response.json())
       .then(data => {
         // Verificar si el usuario y la contraseña son correctos
-        var found = false;
+        let found = false;
         data.forEach(user => {
-          if (user.username === username && user.password === password) {
+          if (user.username.toLowerCase() === username.toLowerCase() && user.password === password) {
             found = true;
             return;
           }
@@ -20,7 +20,7 @@ document.getElementById("btn-iniciar").addEventListener("click", function(event)
   
         // Mostrar un mensaje de error si el usuario y la contraseña no son correctos
         if (found) {
-            window.location.href = "usuario-alumno.html";
+            window.location.href = "Alumno/usuario-alumno.html";
         }
         else{
           alert("Usuario o contraseña incorrectos");

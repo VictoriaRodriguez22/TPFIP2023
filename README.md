@@ -46,9 +46,7 @@ Características y Funcionalidades
 ## Requisitos Técnicos
 
 - El sistema está desarrollado utilizando el framework React.js y se requiere un entorno de ejecución compatible con esta tecnología.
--
-
- Se utilizan bases de datos para almacenar la información de los usuarios, notas, asistencias, entre otros datos relevantes.
+- Se utilizan bases de datos para almacenar la información de los usuarios, notas, asistencias, entre otros datos relevantes.
 - Se recomienda contar con un servidor web para alojar la aplicación y asegurar su disponibilidad.
 
 ## Instalación y Uso
